@@ -13,4 +13,9 @@ def setup_logger():
         fmt = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
         fh.setFormatter(fmt)
         logger.addHandler(fh)
+
+        # Also log to console
+        sh = logging.StreamHandler()
+        sh.setFormatter(fmt)
+        logger.addHandler(sh)
     return logger

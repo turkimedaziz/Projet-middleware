@@ -1,0 +1,31 @@
+services:
+  # 1. MQTT Broker
+  broker:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  # 2. Django Web Server (Dashboard)
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app  # Mounts source code & DB so changes persist to host
+    ports:
+      - "8000:8000"
+    depends_on:
+      - broker
+
+  # 3. Middleware (The "Worker")
+  middleware:
+    build: .
+    # connect to the 'broker' service defined above
+    command: python manage.py runmiddleware --host broker --port 1883
+    volumes:
+      - .:/app  # MUST match web volume to see the same db.sqlite3
+    depends_on:
+      - broker
+      - web

@@ -7,13 +7,13 @@ def dashboard(request):
     items = store.get_messages(100)
     rows = []
     for it in items:
-        in_t = escape(str(it.get('in_topic', '')))
-        out_t = escape(str(it.get('out_topic', '')))
-        payload = escape(str(it.get('payload', '')))
-        qos = escape(str(it.get('qos', '')))
-        time_ms = escape(f"{it.get('time_ms', 0):.2f}")
-        ts = escape(str(it.get('timestamp', '')))
-        status = escape(str(it.get('status', '')))
+        in_t = escape(str(it.in_topic))
+        out_t = escape(str(it.out_topic or ''))
+        payload = escape(str(it.payload))
+        qos = escape(str(it.qos))
+        time_ms = escape(f"{it.time_ms:.2f}")
+        ts = escape(str(it.timestamp))
+        status = escape(str(it.status))
         rows.append(f"<tr><td>{ts}</td><td>{status}</td><td>{in_t}</td><td>{out_t}</td><td>{qos}</td><td>{time_ms}</td><td>{payload}</td></tr>")
 
     html = f"""
