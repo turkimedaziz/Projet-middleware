@@ -1,0 +1,118 @@
+# middleware log (created by project)
+2025-12-11 16:25:11,443 INFO Middleware started, connected to localhost:1883
+2025-12-11 16:25:11,444 INFO Connected with result code 0
+2025-12-11 16:25:11,445 INFO Subscribed to sensors/#
+2025-12-11 16:25:53,454 INFO Middleware stopping...
+2025-12-11 16:26:21,536 INFO Middleware started, connected to localhost:1883
+2025-12-11 16:26:21,536 INFO Connected with result code 0
+2025-12-11 16:26:21,536 INFO Subscribed to sensors/#
+2025-12-11 16:28:41,905 INFO Filtered out message on sensors/temp/1 payload=b'16.39' qos=0
+2025-12-11 16:28:43,906 INFO Filtered out message on sensors/temp/1 payload=b'19.43' qos=0
+2025-12-11 16:28:45,906 INFO Filtered out message on sensors/temp/1 payload=b'16.3' qos=0
+2025-12-11 16:28:47,906 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.14 payload={"value": 24.02, "processed_at": "2025-12-11T22:28:47.906788Z"}
+2025-12-11 16:28:49,907 INFO Filtered out message on sensors/temp/1 payload=b'17.2' qos=0
+2025-12-11 16:28:51,569 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.09 payload={"value": 80.69, "processed_at": "2025-12-11T22:28:51.569775Z"}
+2025-12-11 16:28:51,907 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 28.34, "processed_at": "2025-12-11T22:28:51.907309Z"}
+2025-12-11 16:28:53,907 INFO Filtered out message on sensors/temp/1 payload=b'15.48' qos=0
+2025-12-11 16:28:54,570 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.09 payload={"value": 79.76, "processed_at": "2025-12-11T22:28:54.570104Z"}
+2025-12-11 16:28:55,907 INFO Filtered out message on sensors/temp/1 payload=b'18.37' qos=0
+2025-12-11 16:28:57,570 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 69.46, "processed_at": "2025-12-11T22:28:57.570357Z"}
+2025-12-11 16:28:57,908 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.09 payload={"value": 23.2, "processed_at": "2025-12-11T22:28:57.908081Z"}
+2025-12-11 16:28:59,908 INFO Filtered out message on sensors/temp/1 payload=b'17.05' qos=0
+2025-12-11 16:29:00,570 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 68.17, "processed_at": "2025-12-11T22:29:00.570734Z"}
+2025-12-11 16:29:01,908 INFO Filtered out message on sensors/temp/1 payload=b'17.94' qos=0
+2025-12-11 16:29:03,571 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 86.12, "processed_at": "2025-12-11T22:29:03.570994Z"}
+2025-12-11 16:29:03,908 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 22.2, "processed_at": "2025-12-11T22:29:03.908790Z"}
+2025-12-11 16:29:05,909 INFO Filtered out message on sensors/temp/1 payload=b'16.0' qos=0
+2025-12-11 16:29:06,571 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.06 payload={"value": 69.44, "processed_at": "2025-12-11T22:29:06.571243Z"}
+2025-12-11 16:29:07,909 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 26.89, "processed_at": "2025-12-11T22:29:07.909151Z"}
+2025-12-11 16:29:09,571 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.10 payload={"value": 71.61, "processed_at": "2025-12-11T22:29:09.571420Z"}
+2025-12-11 16:29:09,909 INFO Filtered out message on sensors/temp/1 payload=b'15.79' qos=0
+2025-12-11 16:29:11,909 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.11 payload={"value": 29.25, "processed_at": "2025-12-11T22:29:11.909700Z"}
+2025-12-11 16:29:12,571 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 46.22, "processed_at": "2025-12-11T22:29:12.571631Z"}
+2025-12-11 16:29:13,909 INFO Filtered out message on sensors/temp/1 payload=b'15.24' qos=0
+2025-12-11 16:29:15,572 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 82.35, "processed_at": "2025-12-11T22:29:15.572020Z"}
+2025-12-11 16:29:15,910 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.13 payload={"value": 23.68, "processed_at": "2025-12-11T22:29:15.910325Z"}
+2025-12-11 16:29:17,910 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 24.18, "processed_at": "2025-12-11T22:29:17.910359Z"}
+2025-12-11 16:29:18,572 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 38.21, "processed_at": "2025-12-11T22:29:18.572282Z"}
+2025-12-11 16:29:19,910 INFO Filtered out message on sensors/temp/1 payload=b'17.45' qos=0
+2025-12-11 16:29:21,572 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 67.94, "processed_at": "2025-12-11T22:29:21.572506Z"}
+2025-12-11 16:29:21,911 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 27.75, "processed_at": "2025-12-11T22:29:21.911044Z"}
+2025-12-11 16:29:23,911 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 25.28, "processed_at": "2025-12-11T22:29:23.911153Z"}
+2025-12-11 16:29:24,572 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 66.93, "processed_at": "2025-12-11T22:29:24.572715Z"}
+2025-12-11 16:29:25,911 INFO Filtered out message on sensors/temp/1 payload=b'19.13' qos=0
+2025-12-11 16:29:27,572 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 73.31, "processed_at": "2025-12-11T22:29:27.572900Z"}
+2025-12-11 16:29:27,911 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.08 payload={"value": 22.43, "processed_at": "2025-12-11T22:29:27.911620Z"}
+2025-12-11 16:29:29,912 INFO Filtered out message on sensors/temp/1 payload=b'17.23' qos=0
+2025-12-11 16:29:30,573 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 81.75, "processed_at": "2025-12-11T22:29:30.573156Z"}
+2025-12-11 16:29:31,912 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 28.58, "processed_at": "2025-12-11T22:29:31.912189Z"}
+2025-12-11 16:29:33,573 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.09 payload={"value": 39.55, "processed_at": "2025-12-11T22:29:33.573367Z"}
+2025-12-11 16:29:33,912 INFO Filtered out message on sensors/temp/1 payload=b'19.33' qos=0
+2025-12-11 16:29:35,912 INFO Filtered out message on sensors/temp/1 payload=b'19.8' qos=0
+2025-12-11 16:29:36,573 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 32.42, "processed_at": "2025-12-11T22:29:36.573671Z"}
+2025-12-11 16:29:37,913 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.11 payload={"value": 29.78, "processed_at": "2025-12-11T22:29:37.912979Z"}
+2025-12-11 16:29:39,573 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 54.99, "processed_at": "2025-12-11T22:29:39.573877Z"}
+2025-12-11 16:29:39,913 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.08 payload={"value": 29.76, "processed_at": "2025-12-11T22:29:39.913348Z"}
+2025-12-11 16:29:41,913 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 25.38, "processed_at": "2025-12-11T22:29:41.913665Z"}
+2025-12-11 16:29:42,574 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 52.18, "processed_at": "2025-12-11T22:29:42.574060Z"}
+2025-12-11 16:29:43,913 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 23.59, "processed_at": "2025-12-11T22:29:43.913731Z"}
+2025-12-11 16:29:45,574 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 71.05, "processed_at": "2025-12-11T22:29:45.574248Z"}
+2025-12-11 16:29:45,914 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.10 payload={"value": 27.35, "processed_at": "2025-12-11T22:29:45.914020Z"}
+2025-12-11 16:29:47,914 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 29.5, "processed_at": "2025-12-11T22:29:47.914255Z"}
+2025-12-11 16:29:48,574 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 72.52, "processed_at": "2025-12-11T22:29:48.574419Z"}
+2025-12-11 16:29:49,914 INFO Filtered out message on sensors/temp/1 payload=b'18.81' qos=0
+2025-12-11 16:29:51,574 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 86.88, "processed_at": "2025-12-11T22:29:51.574755Z"}
+2025-12-11 16:29:51,914 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 29.64, "processed_at": "2025-12-11T22:29:51.914800Z"}
+2025-12-11 16:29:53,915 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.09 payload={"value": 26.58, "processed_at": "2025-12-11T22:29:53.915073Z"}
+2025-12-11 16:29:54,575 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.11 payload={"value": 39.7, "processed_at": "2025-12-11T22:29:54.574954Z"}
+2025-12-11 16:29:55,915 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.08 payload={"value": 25.05, "processed_at": "2025-12-11T22:29:55.915198Z"}
+2025-12-11 16:29:57,575 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.10 payload={"value": 35.62, "processed_at": "2025-12-11T22:29:57.575188Z"}
+2025-12-11 16:29:57,915 INFO Filtered out message on sensors/temp/1 payload=b'19.81' qos=0
+2025-12-11 16:29:59,915 INFO Filtered out message on sensors/temp/1 payload=b'19.82' qos=0
+2025-12-11 16:30:00,575 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 81.25, "processed_at": "2025-12-11T22:30:00.575255Z"}
+2025-12-11 16:30:01,916 INFO Filtered out message on sensors/temp/1 payload=b'18.63' qos=0
+2025-12-11 16:30:03,575 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 37.14, "processed_at": "2025-12-11T22:30:03.575515Z"}
+2025-12-11 16:30:03,916 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 28.34, "processed_at": "2025-12-11T22:30:03.916301Z"}
+2025-12-11 16:30:05,916 INFO Filtered out message on sensors/temp/1 payload=b'17.02' qos=0
+2025-12-11 16:30:06,575 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 74.01, "processed_at": "2025-12-11T22:30:06.575850Z"}
+2025-12-11 16:30:07,916 INFO Filtered out message on sensors/temp/1 payload=b'16.62' qos=0
+2025-12-11 16:30:09,575 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 74.7, "processed_at": "2025-12-11T22:30:09.575891Z"}
+2025-12-11 16:30:09,917 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.09 payload={"value": 24.25, "processed_at": "2025-12-11T22:30:09.917034Z"}
+2025-12-11 16:30:11,917 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 22.09, "processed_at": "2025-12-11T22:30:11.917216Z"}
+2025-12-11 16:30:12,576 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 60.07, "processed_at": "2025-12-11T22:30:12.576308Z"}
+2025-12-11 16:30:13,917 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 25.26, "processed_at": "2025-12-11T22:30:13.917401Z"}
+2025-12-11 16:30:15,576 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.06 payload={"value": 88.4, "processed_at": "2025-12-11T22:30:15.576569Z"}
+2025-12-11 16:30:15,917 INFO Filtered out message on sensors/temp/1 payload=b'16.67' qos=0
+2025-12-11 16:30:17,917 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 25.25, "processed_at": "2025-12-11T22:30:17.917820Z"}
+2025-12-11 16:30:18,576 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 47.02, "processed_at": "2025-12-11T22:30:18.576674Z"}
+2025-12-11 16:30:19,918 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.17 payload={"value": 24.73, "processed_at": "2025-12-11T22:30:19.918322Z"}
+2025-12-11 16:30:21,576 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 72.55, "processed_at": "2025-12-11T22:30:21.576904Z"}
+2025-12-11 16:30:21,918 INFO Filtered out message on sensors/temp/1 payload=b'16.46' qos=0
+2025-12-11 16:30:23,918 INFO Filtered out message on sensors/temp/1 payload=b'17.83' qos=0
+2025-12-11 16:30:24,577 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.06 payload={"value": 37.59, "processed_at": "2025-12-11T22:30:24.577185Z"}
+2025-12-11 16:30:25,919 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 27.56, "processed_at": "2025-12-11T22:30:25.918978Z"}
+2025-12-11 16:30:27,577 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.06 payload={"value": 36.02, "processed_at": "2025-12-11T22:30:27.577356Z"}
+2025-12-11 16:30:27,919 INFO Filtered out message on sensors/temp/1 payload=b'18.63' qos=0
+2025-12-11 16:30:29,919 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.09 payload={"value": 26.37, "processed_at": "2025-12-11T22:30:29.919366Z"}
+2025-12-11 16:30:30,577 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 39.81, "processed_at": "2025-12-11T22:30:30.577688Z"}
+2025-12-11 16:30:31,919 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 20.88, "processed_at": "2025-12-11T22:30:31.919561Z"}
+2025-12-11 16:30:33,578 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 57.72, "processed_at": "2025-12-11T22:30:33.578041Z"}
+2025-12-11 16:30:33,920 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.08 payload={"value": 23.21, "processed_at": "2025-12-11T22:30:33.919939Z"}
+2025-12-11 16:30:35,920 INFO Filtered out message on sensors/temp/1 payload=b'15.74' qos=0
+2025-12-11 16:30:36,578 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 80.16, "processed_at": "2025-12-11T22:30:36.578175Z"}
+2025-12-11 16:30:37,920 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.08 payload={"value": 20.8, "processed_at": "2025-12-11T22:30:37.920383Z"}
+2025-12-11 16:30:39,578 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.07 payload={"value": 71.82, "processed_at": "2025-12-11T22:30:39.578377Z"}
+2025-12-11 16:30:39,920 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 27.86, "processed_at": "2025-12-11T22:30:39.920739Z"}
+2025-12-11 16:30:41,921 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 28.51, "processed_at": "2025-12-11T22:30:41.920997Z"}
+2025-12-11 16:30:42,578 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.06 payload={"value": 88.78, "processed_at": "2025-12-11T22:30:42.578663Z"}
+2025-12-11 16:30:43,921 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 27.34, "processed_at": "2025-12-11T22:30:43.921196Z"}
+2025-12-11 16:30:45,578 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.11 payload={"value": 51.25, "processed_at": "2025-12-11T22:30:45.578770Z"}
+2025-12-11 16:30:45,921 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.07 payload={"value": 26.55, "processed_at": "2025-12-11T22:30:45.921440Z"}
+2025-12-11 16:30:47,921 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.08 payload={"value": 27.02, "processed_at": "2025-12-11T22:30:47.921776Z"}
+2025-12-11 16:30:48,579 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 67.63, "processed_at": "2025-12-11T22:30:48.579130Z"}
+2025-12-11 16:30:49,922 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 22.59, "processed_at": "2025-12-11T22:30:49.922152Z"}
+2025-12-11 16:30:51,579 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.09 payload={"value": 77.19, "processed_at": "2025-12-11T22:30:51.579294Z"}
+2025-12-11 16:30:51,922 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.11 payload={"value": 22.72, "processed_at": "2025-12-11T22:30:51.922557Z"}
+2025-12-11 16:30:53,922 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.06 payload={"value": 23.04, "processed_at": "2025-12-11T22:30:53.922659Z"}
+2025-12-11 16:30:54,579 INFO Processed: in_topic=sensors/hum/2 out_topic=processed/hum/2 qos=0 time_ms=0.08 payload={"value": 40.29, "processed_at": "2025-12-11T22:30:54.579600Z"}
+2025-12-11 16:30:55,922 INFO Processed: in_topic=sensors/temp/1 out_topic=processed/temp/1 qos=0 time_ms=0.08 payload={"value": 26.83, "processed_at": "2025-12-11T22:30:55.922929Z"}
