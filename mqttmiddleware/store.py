@@ -31,3 +31,10 @@ def add_message(item: dict):
 def get_messages(limit: int = 100):
     """Return up to `limit` most recent messages."""
     return Message.objects.all()[:limit]
+
+def get_stats():
+    """Return counts of processed and filtered messages."""
+    return {
+        'processed': Message.objects.filter(status='processed').count(),
+        'filtered': Message.objects.filter(status='filtered').count(),
+    }

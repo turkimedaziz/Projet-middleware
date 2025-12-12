@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="2">
+    <title>MQTT Middleware Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-slate-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span class="ml-3 text-xl font-bold tracking-tight">MQTT Middleware</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        <span class="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></span>
+                        Live
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+            <!-- Processed Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dt class="text-sm font-medium text-gray-500 truncate">Total Processed</dt>
+                            <dd class="text-3xl font-semibold text-gray-900">{{ stats.processed }}</dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtered Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-gray-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dt class="text-sm font-medium text-gray-500 truncate">Total Filtered</dt>
+                            <dd class="text-3xl font-semibold text-gray-900">{{ stats.filtered }}</dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Line Chart (Wide) -->
+            <div class="bg-white shadow rounded-lg p-6 lg:col-span-2">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Sensor Trends (Live)</h3>
+                <div class="relative h-64 w-full">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Pie Chart (Narrow) -->
+            <div class="bg-white shadow rounded-lg p-6">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Traffic Distribution</h3>
+                <div class="relative h-64 w-full flex justify-center">
+                    <canvas id="ratioChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Recent Messages</h2>
+
+        <!-- Table Card -->
+        <div class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-300">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col"
+                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Timestamp
+                            </th>
+                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Status
+                            </th>
+                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Input
+                                Topic</th>
+                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Output
+                                Topic</th>
+                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">QoS</th>
+                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Time (ms)
+                            </th>
+                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Payload
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        {% for msg in messages %}
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-500 sm:pl-6">
+                                {{ msg.timestamp|date:"Y-m-d H:i:s.u" }}
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm">
+                                {% if msg.status == 'processed' %}
+                                <span
+                                    class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Processed</span>
+                                {% else %}
+                                <span
+                                    class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Filtered</span>
+                                {% endif %}
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-600 font-mono text-xs">
+                                {{ msg.in_topic }}
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-600 font-mono text-xs">
+                                {{ msg.out_topic|default:"-" }}
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                {{ msg.qos }}
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                {{ msg.time_ms|floatformat:2 }}
+                            </td>
+                            <td class="px-3 py-4 text-sm text-gray-500 font-mono text-xs max-w-xs truncate">
+                                {{ msg.payload }}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="px-3 py-10 text-center text-sm text-gray-500">
+                                No messages found yet. Start the middleware and publishers!
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Charts Script -->
+    <script>
+        // Data from Django
+        const labels = {{ chart_labels| safe }};
+        const dataValues = {{ chart_data| safe }};
+        const processedCount = {{ stats.processed }};
+        const filteredCount = {{ stats.filtered }};
+
+        // Trend Chart
+        const ctxTrend = document.getElementById('trendChart').getContext('2d');
+        new Chart(ctxTrend, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Sensor Value',
+                    data: dataValues,
+                    borderColor: '#4F46E5', // Indigo 600
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false, // Disable animation for smoother refresh
+                scales: {
+                    x: { display: false }, // Hide lots of timestamps for cleaner look
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Ratio Chart
+        const ctxRatio = document.getElementById('ratioChart').getContext('2d');
+        new Chart(ctxRatio, {
+            type: 'doughnut',
+            data: {
+                labels: ['Processed', 'Filtered'],
+                datasets: [{
+                    data: [processedCount, filteredCount],
+                    backgroundColor: ['#22c55e', '#6b7280'], // Green-500, Gray-500
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
