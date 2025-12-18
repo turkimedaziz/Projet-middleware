@@ -5,6 +5,7 @@ import paho.mqtt.client as mqtt
 from .filters import parse_payload, should_forward, map_topic, enrich
 from .logger import setup_logger
 from . import store
+from .models import SensorConfig
 from django.conf import settings
 
 class Middleware:
@@ -46,7 +47,27 @@ class Middleware:
         qos = msg.qos
 
         parsed = parse_payload(payload)
-        forwarded = should_forward(parsed, threshold=self.threshold)
+        
+        # Dynamic Threshold Lookup
+        current_threshold = self.threshold # fallback
+        s_type = None
+        if 'temp' in topic:
+            s_type = 'temp'
+        elif 'hum' in topic:
+            s_type = 'hum'
+        
+        if s_type:
+            try:
+                # Query DB for dynamic config
+                # Note: DB queries on every message might be slow in production, but OK for demo.
+                # Consider caching in a real app.
+                conf = SensorConfig.objects.filter(sensor_type=s_type).first()
+                if conf:
+                    current_threshold = conf.threshold
+            except Exception as e:
+                pass
+
+        forwarded = should_forward(parsed, threshold=current_threshold)
 
         if not forwarded:
             self.logger.info('Filtered out message on %s payload=%s qos=%s', topic, payload, qos)
